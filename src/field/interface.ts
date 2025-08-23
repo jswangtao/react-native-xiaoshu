@@ -349,6 +349,7 @@ export interface FieldCheckboxProps
       | 'activeColor'
       | 'iconSize'
       | 'deselect'
+      | 'renderIcon'
     > {}
 
 export interface FieldPasswordInputProps

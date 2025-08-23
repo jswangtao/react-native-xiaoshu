@@ -19,6 +19,7 @@ function CheckboxGroup<T = any>({
   activeColor,
   iconSize,
   checkboxIconLabelGap,
+  renderIcon,
   ...restProps
 }: CheckboxGroupProps<T>) {
   const [value, onChange] = useControllableValue<T | T[] | undefined | null>(
@@ -45,6 +46,7 @@ function CheckboxGroup<T = any>({
             gap={checkboxProps.gap ?? checkboxIconLabelGap}
             activeColor={checkboxProps.activeColor ?? activeColor}
             iconSize={checkboxProps.iconSize ?? iconSize}
+            renderIcon={renderIcon}
             key={`${checkboxValue}`}
             activeValue={checkboxValue}
             inactiveValue={null}

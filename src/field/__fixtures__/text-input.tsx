@@ -71,6 +71,15 @@ const BasicFieldTextInput: React.FC = () => {
         onChange={setText1}
         divider={false}
       />
+      <Field.TextInput
+        type="textarea"
+        title="多行输入去掉边框"
+        textInputBordered={false}
+        placeholder="请输入"
+        value={text1}
+        onChange={setText1}
+        divider={false}
+      />
     </Cell.Group>
   )
 }

@@ -30,7 +30,7 @@ const FieldTextInput: React.FC<FieldTextInputProps> = ({
 
   if (type === 'textarea') {
     textAlign = 'left'
-    textInputBordered = true
+    textInputBordered = textInputBordered ?? true
     cellProps.vertical = true
   }
 

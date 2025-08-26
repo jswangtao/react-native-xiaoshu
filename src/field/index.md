@@ -89,7 +89,7 @@ group:
 
 去掉 TextInputProps 的 style、bordered、size、textAlign，以，去掉 CellProps 点击事件相关属性(TouchableHighlightProps)、value、textAlign、valueTextStyle、valueTextNumberOfLines、onPressDebounceWait。
 
-> TextInput 也有 textAlign，以 TextInput 为准。如果是 textarea 会锁定竖向排版、文字左对齐、出现输入框边框。
+> TextInput 也有 textAlign，以 TextInput 为准。如果是 textarea 会锁定竖向排版、文字左对齐、出现输入框边框(可通过 textInputBordered={false}去掉边框)。
 
 | 属性名            | 描述                                                                  | 类型                          | 默认值    | 版本 |
 | :---------------- | --------------------------------------------------------------------- | ----------------------------- | --------- | ---- |

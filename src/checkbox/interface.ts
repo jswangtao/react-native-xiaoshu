@@ -127,7 +127,7 @@ export interface CheckboxProps<ActiveValueT = any, InactiveValueT = any>
 
 export interface CheckboxGroupProps<ActiveValueT = any>
   extends SpaceProps,
-    Partial<Pick<CheckboxProps, 'activeColor' | 'iconSize'>> {
+    Partial<Pick<CheckboxProps, 'activeColor' | 'iconSize' | 'renderIcon'>> {
   theme?: Partial<CheckboxTheme>
   checkboxLabelTextStyle?: CheckboxProps['labelTextStyle']
   checkboxIconLabelGap?: number

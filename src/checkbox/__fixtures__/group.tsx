@@ -10,7 +10,11 @@ import {
   Space,
   Divider,
 } from '@fruits-chain/react-native-xiaoshu'
-import { Text } from 'react-native'
+import { Text, Pressable } from 'react-native'
+import {
+  ArrowUpOutline,
+  ArrowDownOutline,
+} from '@fruits-chain/icons-react-native'
 
 const options = new Array(6).fill(0).map((_, index) => ({
   value: index + 1,
@@ -26,6 +30,25 @@ const CheckboxGroup: React.FC = () => {
       <Card title="Checkbox 组:单选">
         <Text>默认选中后点击可以取消选中</Text>
         <Checkbox.Group options={options} />
+
+        <Divider>·</Divider>
+
+        <Text>自定义图标</Text>
+        <Checkbox.Group
+          options={options}
+          inactiveColor="#098"
+          renderIcon={opt => {
+            return (
+              <Pressable onPress={opt.onPress}>
+                {opt.active ? (
+                  <ArrowDownOutline color={opt.activeColor} size={opt.size} />
+                ) : (
+                  <ArrowUpOutline color={opt.inactiveColor} size={opt.size} />
+                )}
+              </Pressable>
+            )
+          }}
+        />
 
         <Divider>·</Divider>
 

@@ -30,6 +30,12 @@ interface CheckboxIconPrivateProps {
    * @default 20
    */
   size?: number
+
+  /**
+   * 未选中状态颜色
+   * @default checkbox_icon_color
+   */
+  inactiveColor?: ColorValue
 }
 
 export interface CheckboxIconProps
@@ -45,7 +51,7 @@ interface RenderIconProps extends CheckboxIconPrivateProps {
 }
 
 export interface CheckboxProps<ActiveValueT = any, InactiveValueT = any>
-  extends Pick<CheckboxIconPrivateProps, 'activeColor'>,
+  extends Pick<CheckboxIconPrivateProps, 'activeColor' | 'inactiveColor'>,
     ViewProps {
   theme?: Partial<CheckboxTheme>
   /**
@@ -104,7 +110,7 @@ export interface CheckboxProps<ActiveValueT = any, InactiveValueT = any>
 
   /**
    * 图标大小
-   * @default 20
+   * @default checkbox_icon_size
    */
   iconSize?: number
 
@@ -127,7 +133,12 @@ export interface CheckboxProps<ActiveValueT = any, InactiveValueT = any>
 
 export interface CheckboxGroupProps<ActiveValueT = any>
   extends SpaceProps,
-    Partial<Pick<CheckboxProps, 'activeColor' | 'iconSize' | 'renderIcon'>> {
+    Partial<
+      Pick<
+        CheckboxProps,
+        'activeColor' | 'inactiveColor' | 'iconSize' | 'renderIcon'
+      >
+    > {
   theme?: Partial<CheckboxTheme>
   checkboxLabelTextStyle?: CheckboxProps['labelTextStyle']
   checkboxIconLabelGap?: number
@@ -137,7 +148,13 @@ export interface CheckboxGroupProps<ActiveValueT = any>
   } & Partial<
     Pick<
       CheckboxProps,
-      'gap' | 'labelTextStyle' | 'disabled' | 'iconSize' | 'activeColor'
+      | 'gap'
+      | 'labelTextStyle'
+      | 'disabled'
+      | 'iconSize'
+      | 'activeColor'
+      | 'inactiveColor'
+      | 'renderIcon'
     >
   >)[]
 

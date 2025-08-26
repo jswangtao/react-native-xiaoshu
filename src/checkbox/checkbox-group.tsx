@@ -17,6 +17,7 @@ function CheckboxGroup<T = any>({
   deselect = true,
   checkboxLabelTextStyle,
   activeColor,
+  inactiveColor,
   iconSize,
   checkboxIconLabelGap,
   renderIcon,
@@ -45,8 +46,9 @@ function CheckboxGroup<T = any>({
             }
             gap={checkboxProps.gap ?? checkboxIconLabelGap}
             activeColor={checkboxProps.activeColor ?? activeColor}
+            inactiveColor={checkboxProps.inactiveColor ?? inactiveColor}
             iconSize={checkboxProps.iconSize ?? iconSize}
-            renderIcon={renderIcon}
+            renderIcon={checkboxProps.renderIcon ?? renderIcon}
             key={`${checkboxValue}`}
             activeValue={checkboxValue}
             inactiveValue={null}

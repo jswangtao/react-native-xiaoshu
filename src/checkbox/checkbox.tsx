@@ -20,10 +20,11 @@ function Checkbox<ActiveValueT = boolean, InactiveValueT = boolean>({
   label,
   labelDisabled = false,
   labelPosition = 'right',
-  iconSize = 20,
+  iconSize,
   renderIcon,
   disabled,
   activeColor,
+  inactiveColor,
   gap,
 
   style,
@@ -48,6 +49,12 @@ function Checkbox<ActiveValueT = boolean, InactiveValueT = boolean>({
   })
 
   const _gap = getDefaultValue(gap, CV.checkbox_label_margin)
+  const _activeColor = getDefaultValue(
+    activeColor,
+    CV.checkbox_checked_icon_color,
+  )
+  const _iconSize = getDefaultValue(iconSize, CV.checkbox_icon_size)
+  const _inactiveColor = getDefaultValue(inactiveColor, CV.checkbox_icon_color)
   const active = value === activeValue
   const onChangeValue = () => {
     const newValue = active ? inactiveValue : activeValue
@@ -74,9 +81,10 @@ function Checkbox<ActiveValueT = boolean, InactiveValueT = boolean>({
   const iconProps = {
     style: iconStyle,
     active,
-    activeColor,
+    inactiveColor: _inactiveColor,
+    activeColor: _activeColor,
     disabled,
-    size: iconSize,
+    size: _iconSize,
     onPress: onChangeValue,
   }
   const iconJSX = renderIcon ? (
